@@ -6,7 +6,6 @@ on:
   pull_request:
 env:
   TRIVY_VERSION: 0.51.1
-  WORKING_DIRECTORY: terraform/mask
 jobs:
   build:
     name: Build
@@ -16,8 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Trivy vulnerability scanner in IaC mode
-        uses: aquasecurity/trivy-action@b2933f565dbc598b29947660e66259e3c7bc8561
+        uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
           hide-progress: true
-          trivyignores: ${{ env.WORKING_DIRECTORY }}/.trivyignore
