@@ -5,7 +5,7 @@ on:
       - main
   pull_request:
 env:
-  TRIVY_VERSION: 0.50.1
+  TRIVY_VERSION: 0.51.1
   WORKING_DIRECTORY: terraform/mask
 jobs:
   build:
